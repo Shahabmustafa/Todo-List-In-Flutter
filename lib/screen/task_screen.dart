@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/screen/addtask_screeen.dart';
 
 class TaskScreen extends StatelessWidget {
   const TaskScreen({Key? key}) : super(key: key);
 
-  Widget builderButtonSheet(BuildContext context) => Container();
+  Widget builderButtonSheet(BuildContext context) => AddTaskScreen();
 
 
   @override
@@ -13,14 +14,14 @@ class TaskScreen extends StatelessWidget {
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
         onPressed: (){
-          showModalBottomSheet(context: context, builder: (BuildContext context) => Container());
+          showModalBottomSheet(context: context, builder: (BuildContext context) => AddTaskScreen());
         },
       ),
       backgroundColor: Colors.lightBlueAccent,
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.only(top: 30.0,left: 30.0,right: 30.0,bottom: 30.0),
+            padding: EdgeInsets.only(top: 30.0,right: 30.0,bottom: 30.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const <Widget>[
@@ -60,32 +61,12 @@ class TaskScreen extends StatelessWidget {
                     topRight: Radius.circular(20.0),
                   ),
                 ),
-                // child: ListView(
-                //   children: const <Widget>[
-                //     ListTile(
-                //       title: Text('Title'),
-                //       trailing: Checkbox(
-                //           value: false
-                //       ),
-                //     ),
-                //     ListTile(
-                //       title: Text('Title'),
-                //       trailing: Checkbox(
-                //           value: false
-                //       ),
-                //     ),
-                //     ListTile(
-                //       title: Text('Title'),
-                //       trailing: Checkbox(
-                //           value: false
-                //       ),
-                //     ),
-                //   ],
-                // ),
+                // child: TaskList(),
                 ),
-              ),
+          ),
         ],
       ),
     );
   }
 }
+
